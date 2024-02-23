@@ -1,0 +1,51 @@
+.main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: calc(100vh - 150px);
+}
+
+.greetings {
+    height: 30vh;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+}
+.title {
+    font-size: 3em;
+    margin-bottom: 2vh;
+}
+
+.main p {
+    margin: 4px 0;
+    font-size: 18px;
+}
+
+.contactArea {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 50vh;
+}
+
+.networks {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 20px;
+    width: 70%;
+}
+
+.networks a p {
+    font-size: 14px;
+    color: var(--color-dark);
+    transition: color 0.3s ease;
+}
+
+.networks a:hover p {
+    color: var(--color-primary);
+}

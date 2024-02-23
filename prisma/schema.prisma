@@ -1,0 +1,18 @@
+generator client {
+    provider = "prisma-client-js"
+}
+
+datasource db {
+    provider = "mysql"
+    url = "mysql://f2portfolio:Aj6ze5EZfsfjkl=eZE4@192.168.1.33:3306/f2portfolio"
+}
+
+model User {
+    id String
+    username String
+    email String
+    avatar String
+    createdAt DateTime @default(now())
+    updatedAt DateTime @updatedAt
+    
+}
