@@ -6,7 +6,7 @@ export async function POST(req: NextRequest) {
     const data = await req.json()
     console.log("DATA :", data)
     try {
-        fetch("https://discord.com/api/webhooks/1210094277741387826/KDNfLdWWQTo2L1WW6WZfx6V__8u0nvdsrb8amytZ9CLU3jAg_u4vf1qFhWvgBX1Y90-7", {
+        fetch(process.env.WEBHOOK || "", {
         method: "POST",
         headers: {
             "Content-Type": "application/json"
