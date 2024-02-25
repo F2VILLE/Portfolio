@@ -14,7 +14,7 @@
     flex-direction: column;
 }
 .title {
-    font-size: 3em;
+    font-size: 2em;
     margin-bottom: 2vh;
 }
 
@@ -22,20 +22,6 @@
     max-width: 80vw;
     text-align: center;
     white-space: auto;
-    width: 80vw;
     margin: 4px 0;
-    font-size: 26px;
-}
-
-@media (max-width: 800px) {
-  .main {
-    height: calc(80vh - 100px);
-  }
-  .main p {
     font-size: 18px;
-  }
-
-  .title {
-    font-size: 2em;
-  }
 }
