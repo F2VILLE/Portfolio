@@ -22,16 +22,17 @@ export default function ContactForm() {
                     if (res.status === 200) {
                         setSuccess(true)
                         res.json().then(r => {
+                            console.log(r)
                             resolve(r.message)
                         }).catch(() => {
                             resolve("")
                         })
                     } else {
-                        reject()
+                        reject(res)
                     }
                 })
                 .catch((err) => {
-                    reject()
+                    reject(err)
                 })
         })
     }
@@ -54,10 +55,19 @@ export default function ContactForm() {
                         sendFunction(email, subject, message).then((msg) => {
                             setErrorMessage(msg)
                         })
-                            .catch(() => {
-                                setErrorMessage("An error occured, please try again later.")
+                            .catch((e) => {
+                                console.error(e)
+                                if (e.status && e.status === 429) {
+                                    setErrorMessage("You are sending too many messages !")
+                                }
+                                else {
+                                    setErrorMessage("An error occured, please try again later.")
+                                }
                             })
                     }}>Send</button>
+                    <div className={styles.bottomNotice}>
+                        <p className={styles.bottomText}>Or send me an email at : <a href="mailto:contact@f2ville.dev">contact@f2ville.dev</a></p>
+                    </div>
                 </>
             ) : (
                 <>

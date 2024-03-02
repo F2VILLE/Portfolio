@@ -59,3 +59,30 @@
     font-size: 0.8em;
     margin-top: 5px;
 }
+
+.bottomNotice {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2vh;
+}
+
+.bottomText {
+    font-size: 17px;
+    color: var(--color-dark);
+}
+
+.bottomText a {
+    color: var(--color-dark);
+    transition: color 0.3s ease;
+}
+
+.bottomText a:hover {
+    color: var(--color-primary);
+}
+
+@media (max-width: 1200px) {
+    .form input, .form textarea {
+        width: 70vw;
+    }
+}

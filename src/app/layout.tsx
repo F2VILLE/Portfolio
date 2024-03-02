@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata , Viewport} from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import Header from "@/app/components/header/header"
@@ -7,8 +7,11 @@ const inter = Inter({ subsets: ["latin"] });
 export const metadata: Metadata = {
   title: "F2Ville",
   description: "Welcome to my Portfolio !",
-  themeColor: "#3378FF",
 };
+
+export const viewport: Viewport = {
+  themeColor: "#3378FF",
+}
 
 export default function RootLayout({
   children,
