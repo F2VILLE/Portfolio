@@ -1,7 +1,8 @@
-import type { Metadata , Viewport} from "next";
+import type { Metadata, Viewport } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
-import Header from "@/app/components/header/header"
+import Header from "@/components/header/header"
+import { NextRequest, NextResponse } from "next/server";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
@@ -12,6 +13,7 @@ export const metadata: Metadata = {
 export const viewport: Viewport = {
   themeColor: "#3378FF",
 }
+
 
 export default function RootLayout({
   children,

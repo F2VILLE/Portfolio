@@ -4,15 +4,35 @@ generator client {
 
 datasource db {
     provider = "mysql"
-    url = "mysql://f2portfolio:Aj6ze5EZfsfjkl=eZE4@192.168.1.33:3306/f2portfolio"
+    url      = "mysql://f2portfolio:Aj6ze5EZfsfjkl=eZE4@192.168.1.33:3306/f2portfolio"
 }
 
 model User {
-    id String
-    username String
-    email String
-    avatar String
+    id        Int      @id @default(autoincrement())
+    username  String   @unique
+    password  String
+    isAdmin   Boolean  @default(false)
+    email     String   @unique
+    avatar    String   @default("default.jpg")
     createdAt DateTime @default(now())
     updatedAt DateTime @updatedAt
-    
+    posts     Post[]
+}
+
+model Post {
+    id        Int      @id @default(autoincrement())
+    title     String
+    author    User     @relation(references: [id], fields: [authorId])
+    authorId  Int
+    createdAt DateTime @default(now())
+    updatedAt DateTime @updatedAt
+}
+
+model Project {
+    id          Int      @id
+    name        String
+    description String
+    image       String
+    url         String
+    createdAt   DateTime @default(now())
 }
